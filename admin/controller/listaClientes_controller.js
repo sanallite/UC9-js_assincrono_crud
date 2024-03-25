@@ -1,6 +1,6 @@
 import { clientService } from "../service/cliente-service.js";
 
-const CriarNovaLinha = (nome, email) => {
+const CriarNovaLinha = (nome, email, id) => {
     const NovoCliente = document.createElement("tr");
 
     const conteudo = 
@@ -16,10 +16,27 @@ const CriarNovaLinha = (nome, email) => {
     </td>`;
 
     NovoCliente.innerHTML = conteudo;
+    NovoCliente.dataset.id = id;
+    console.log(NovoCliente);
+
     return NovoCliente;
 }
 
 const tabela = document.querySelector('[data-tabela]');
+
+tabela.addEventListener('click', (evento) => {
+    let botaoDeletar = evento.target.className === "botao-simples botao-simples--excluir";
+
+    if ( botaoDeletar ) {
+        const linhaCliente = evento.target.closest("[data-id]");
+        // Pega o elemento pai pelo mais próximo.
+        let id = linhaCliente.dataset.id;
+        clientService.removerCliente(id).then( () => {
+            linhaCliente.remove();
+        })
+    }
+    
+})
 
 /* const listaClientes = () => {
      const promise = new Promise( (resolve, reject) => {
@@ -53,6 +70,6 @@ Forma anterior. */
 
 clientService.listaClientes().then( promise => {
     promise.forEach(element => {
-    tabela.appendChild(CriarNovaLinha(element.nome, element.email));
+    tabela.appendChild(CriarNovaLinha(element.nome, element.email, element.id));
     });
 } );
