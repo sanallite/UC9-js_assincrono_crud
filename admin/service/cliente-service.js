@@ -21,10 +21,11 @@ export const criarCliente = (nome, email) => {
 }
 
 export const removerCliente = (id) => {
-    return fetch('http://localhost:3000/profile/${id}', {
+    return fetch(`http://localhost:3000/profile/${id}`, {
         method: 'DELETE'
     })
 }
+// Use crase por favor.
 
 export const clientService = {
     listaClientes,
