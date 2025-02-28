@@ -1,14 +1,15 @@
 {
   "name": "admin",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Crud Javascript de uma API local",
+  "main": "db.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Márcio Teodoro",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^0.16.2"
+    "browser-sync": "^3.0.3",
+    "json-server": "^1.0.0-beta.3"
   }
 }
