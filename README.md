@@ -1,6 +1,6 @@
 # Curso Técnico - UC9 - Desenvolvimento Back-End
 
-Nona unidade curricular do meu curso técnico no Senac, no módulo back-end.
+Nona unidade curricular do meu curso técnico no Senac, no módulo web back-end.
 
 ## Conteúdo
 A estrutura e estilização das páginas foram feitos préviamente pelo professor, e em aula foram criados os scripts, utilizando o método fetch e os verbos HTTP para criar, editar, ler e excluir dados de uma API local em um arquivo JSON.
